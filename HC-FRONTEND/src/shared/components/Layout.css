@@ -1,0 +1,218 @@
+/* Background - Clean Professional Look */
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 280px;
+  /* Updated to match Sidebar.css */
+  background: #1e40af;
+  /* Blue Theme */
+  color: white;
+  padding: 20px 10px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  height: 48px;
+}
+
+.sidebar h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar.collapsed h2 {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar.collapsed .toggle-btn {
+  margin: 0 auto;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar-menu li {
+  margin: 4px 0;
+}
+
+.sidebar-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 500;
+  white-space: nowrap;
+  gap: 12px;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li.active a {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.sidebar-menu li a .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+
+.sidebar.collapsed .sidebar-menu li a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.collapsed .sidebar-menu li a .label {
+  display: none;
+}
+
+/* Main Area */
+
+.main-area {
+  flex: 1;
+  width: 100%;
+  margin-left: 280px;
+  /* Matches Expanded Sidebar */
+  position: relative;
+  z-index: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed+.main-area {
+  margin-left: 80px;
+  /* Matches Collapsed Sidebar */
+}
+
+/* Navbar */
+
+.navbar {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* No hamburger needed on left usually if sidebar is static */
+  padding: 0 24px;
+  color: #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.hamburger {
+  display: none;
+  /* Hidden on desktop */
+}
+
+/* Content */
+
+.content-area {
+  padding: 32px;
+  color: #1e293b;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Overlay - Only for mobile if needed, but per request "static sidebar" implies desktop focus */
+.overlay {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+    position: fixed;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-area {
+    margin-left: 0 !important;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    margin-right: auto;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    backdrop-filter: blur(2px);
+  }
+}

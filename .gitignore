@@ -1,0 +1,9 @@
+node_modules/
+.env
+dist/
+build/
+coverage/
+
+BACKEND/node_modules/
+HC-FRONTEND/node_modules/
+BACKEND/uploads/reports/*.pdf

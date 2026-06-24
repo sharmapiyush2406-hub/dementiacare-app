@@ -1,0 +1,255 @@
+/* Background */
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #124c8b; /* Dark blue background from screenshot */
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* White Card */
+
+.login-card {
+  width: 100%;
+  max-width: 400px; /* Reduced from 480px */
+  padding: 30px; /* Reduced padding */
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Header */
+
+.login-header {
+  margin-bottom: 20px;
+}
+
+.welcome-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1565C0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.login-title {
+  font-size: 28px; /* Reduced from 36px */
+  font-weight: 800;
+  color: #102a43;
+  margin: 5px 0;
+  font-family: "Georgia", serif; /* Serfif font matches screenshot */
+}
+
+.login-subtitle {
+  font-size: 13px; /* Reduced from 14px */
+  color: #627d98;
+  margin: 0;
+}
+
+/* Error Message */
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ffcdd2;
+}
+
+/* Role Tabs */
+
+.role-tabs {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px; /* Reduced gap */
+  margin-bottom: 20px;
+}
+
+.role-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px; /* Reduced padding */
+  border-radius: 10px;
+  background: #f0f4f8;
+  cursor: pointer;
+  border: 1px solid #d9e2ec;
+  border-bottom: 3px solid #d9e2ec;
+  transition: all 0.2s ease;
+  color: #486581;
+  font-weight: 600;
+  font-size: 12px; 
+}
+
+.role-tab:hover {
+  background: #e2e8f0;
+}
+
+.role-tab.active {
+  background: #1565C0;
+  color: white;
+  border-color: #0b4a99;
+  border-bottom: 3px solid #093c7a;
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(21, 101, 192, 0.3);
+}
+
+.role-icon { 
+  font-size: 20px; /* Reduced from 24px */
+  margin-bottom: 5px;
+}
+ 
+/* Inputs */
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #486581;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #1565C0;
+    box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+.input-icon {
+    font-size: 16px;
+    color: #94a3b8;
+}
+
+.input-icon.right {
+    cursor: pointer;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 10px; /* Reduced from 15px */
+  border: none;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: #94a3b8;
+}
+
+/* Remove default browser autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #333 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Options Row */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px; /* Reduced font */
+  margin-bottom: 25px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: #1565C0;
+    cursor: pointer;
+}
+
+.forgot-text {
+  cursor: pointer;
+  color: #1565C0;
+  font-weight: 600;
+}
+
+.forgot-text:hover {
+  text-decoration: underline;
+}
+
+.login-btn::before {
+  content: '';
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px; /* Reduced from 16px */
+  border: none;
+  border-radius: 10px; /* Tighter radius */
+  background: #1877F2; /* Nice bright blue */
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.3);
+}
+
+.login-btn:hover {
+  background: #145dbf;
+}
+
+.login-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 25px 20px;
+  }
+  
+  .role-tabs {
+      flex-wrap: wrap;
+  }
+  
+  .role-tab {
+      min-width: 45%; 
+      margin-bottom: 5px;
+  }
+}

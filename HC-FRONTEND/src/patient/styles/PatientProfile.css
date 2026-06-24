@@ -1,0 +1,608 @@
+/* ===========================
+   Patient Profile Page Styles
+   — matches Admin Settings theme
+   =========================== */
+
+.pat-settings-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 100%;
+}
+
+/* Header */
+.pat-settings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.pat-settings-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.pat-settings-subtitle {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
+}
+
+.pat-save-btn-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+}
+
+.pat-save-btn-header:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(16, 185, 129, 0.4);
+}
+
+/* Two-column layout */
+.pat-settings-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ===== LEFT SIDEBAR ===== */
+.pat-profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Avatar Card */
+.pat-avatar-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.pat-avatar-wrapper {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.pat-avatar-circle {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #0d9488);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+.pat-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pat-avatar-initials {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.pat-avatar-edit-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pat-avatar-edit-btn:hover {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+.pat-avatar-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.pat-avatar-role {
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+}
+
+.pat-health-badge {
+    background: #ecfdf5;
+    color: #065f46;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #a7f3d0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pat-change-photo-btn {
+    background: transparent;
+    border: 1.5px dashed #cbd5e1;
+    color: #64748b;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.pat-change-photo-btn:hover {
+    border-color: #10b981;
+    color: #10b981;
+    background: #f0fdf4;
+}
+
+/* Quick Info Card */
+.pat-quick-info-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.pat-quick-info-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #94a3b8;
+    margin: 0 0 16px 0;
+}
+
+.pat-qi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1rem;
+}
+
+.pat-qi-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.pat-qi-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 2px 0;
+}
+
+.pat-qi-value {
+    font-size: 0.87rem;
+    color: #334155;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Tab Nav */
+.pat-settings-nav {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.pat-settings-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border: none;
+    background: transparent;
+    color: #475569;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    border-left: 3px solid transparent;
+}
+
+.pat-settings-nav-btn:hover {
+    background: #f8fafc;
+    color: #10b981;
+}
+
+.pat-settings-nav-btn.active {
+    background: #f0fdf4;
+    color: #10b981;
+    font-weight: 700;
+    border-left-color: #10b981;
+}
+
+/* ===== RIGHT CONTENT ===== */
+.pat-settings-content {
+    min-width: 0;
+}
+
+.pat-settings-section {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 28px;
+    animation: patFadeInUp 0.3s ease;
+}
+
+@keyframes patFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pat-section-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.pat-section-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.pat-section-header p {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Health Alert */
+.pat-health-alert {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+/* Form Grid */
+.pat-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.pat-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pat-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.pat-form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pat-settings-input {
+    padding: 11px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #334155;
+    background: #f8fafc;
+    transition: all 0.2s ease;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.pat-settings-input:focus {
+    border-color: #10b981;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.pat-settings-input[readonly] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.pat-settings-textarea {
+    resize: vertical;
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+/* Toggle List */
+.pat-toggle-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pat-toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    gap: 16px;
+    background: white;
+    transition: background 0.15s ease;
+}
+
+.pat-toggle-item:last-child {
+    border-bottom: none;
+}
+
+.pat-toggle-item:hover {
+    background: #f8fafc;
+}
+
+.pat-toggle-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 3px 0;
+}
+
+.pat-toggle-description {
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Toggle Switch */
+.pat-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.pat-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pat-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e2e8f0;
+    border-radius: 999px;
+    transition: 0.3s ease;
+}
+
+.pat-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.pat-toggle-switch input:checked+.pat-toggle-slider {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.pat-toggle-switch input:checked+.pat-toggle-slider:before {
+    transform: translateX(22px);
+}
+
+/* Notification Group Label */
+.pat-notif-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* Form Actions */
+.pat-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.pat-btn-primary {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+}
+
+.pat-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(16, 185, 129, 0.4);
+}
+
+.pat-btn-secondary {
+    background: white;
+    color: #475569;
+    border: 1.5px solid #e2e8f0;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pat-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .pat-settings-layout {
+        grid-template-columns: 240px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pat-settings-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .pat-profile-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .pat-avatar-card {
+        grid-column: 1 / -1;
+    }
+
+    .pat-settings-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        border-radius: 12px;
+        grid-column: 1 / -1;
+    }
+
+    .pat-settings-nav-btn {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .pat-settings-nav-btn.active {
+        border-left-color: transparent;
+        border-bottom-color: #10b981;
+    }
+
+    .pat-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pat-settings-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pat-save-btn-header {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pat-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .pat-btn-primary,
+    .pat-btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pat-profile-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .pat-settings-section {
+        padding: 20px 16px;
+    }
+}
