@@ -1,5 +1,20 @@
-﻿'use strict';
-require('dotenv').config();
+'use strict';
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+
+// Gracefully skip seeding in production or Render environments
+if (process.env.NODE_ENV === 'production' || process.env.RENDER) {
+  console.log('\n⚠️  Seeding is disabled in production/Render environments. Skipping script execution.\n');
+  process.exit(0);
+}
+
+// Validate that MONGO_URI is defined locally
+if (!process.env.MONGO_URI) {
+  console.error('\n❌ Error: MONGO_URI is not defined in the environment variables.');
+  console.error('Please configure MONGO_URI in your BACKEND/.env file.\n');
+  process.exit(1);
+}
+
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const { USERS, PATIENT_PROFILES, MEDICINES, STAFF_DATA } = require('./seedData');

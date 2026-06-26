@@ -13,8 +13,22 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
+const path = require('path');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+// Gracefully skip seeding in production or Render environments
+if (process.env.NODE_ENV === 'production' || process.env.RENDER) {
+  console.log('\n⚠️  Seeding is disabled in production/Render environments. Skipping script execution.\n');
+  process.exit(0);
+}
+
+// Validate that MONGO_URI is defined locally
+if (!process.env.MONGO_URI) {
+  console.error('\n❌ Error: MONGO_URI is not defined in the environment variables.');
+  console.error('Please configure MONGO_URI in your BACKEND/.env file.\n');
+  process.exit(1);
+}
 
 const User = require('./models/User');
 const Patient = require('./models/Patient');

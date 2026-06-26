@@ -10,7 +10,16 @@ const { errorHandler } = require('./middleware/errorMiddleware');
 const ensureDefaultCaregiver = require('./utils/autoSeed');
 const Patient = require('./models/Patient');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+// Validate required environment variables
+const requiredEnv = ['MONGO_URI', 'JWT_SECRET'];
+const missingEnv = requiredEnv.filter(env => !process.env[env]);
+if (missingEnv.length > 0) {
+    console.error(`\n❌ CRITICAL CONFIGURATION ERROR: Missing environment variables: ${missingEnv.join(', ')}`);
+    console.error('Please ensure they are defined in your .env file (locally) or in your Render environment settings (production).\n');
+    process.exit(1);
+}
 
 // Connect DB
 connectDB()

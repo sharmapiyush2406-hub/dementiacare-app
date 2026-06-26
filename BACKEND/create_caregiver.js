@@ -2,10 +2,18 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const Caregiver = require('./models/Caregiver');
 const dotenv = require('dotenv');
+const path = require('path');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/backenddb';
+// Validate that MONGO_URI is defined
+if (!process.env.MONGO_URI) {
+    console.error('\n❌ Error: MONGO_URI is not defined in the environment variables.');
+    console.error('Please configure MONGO_URI in your BACKEND/.env file.\n');
+    process.exit(1);
+}
+
+const MONGO_URI = process.env.MONGO_URI;
 
 async function createCaregiver() {
     try {

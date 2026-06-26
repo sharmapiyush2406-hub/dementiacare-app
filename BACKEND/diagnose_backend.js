@@ -1,7 +1,8 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
+const path = require('path');
 
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 // Try to load env vars, default to localhost:5000 if not found
 const BASE_URL = process.env.VITE_API_URL || 'http://localhost:5000';
