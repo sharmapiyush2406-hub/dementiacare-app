@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-// Backend Base URL (Production + Local support)
-// VITE_API_URL must be the server ROOT (no /api suffix), e.g. http://localhost:5000
-// For Vercel production: set VITE_API_URL=https://dementia-backend-tkpy.onrender.com in Vercel dashboard
-const RAW_URL =
-    import.meta.env.VITE_API_URL ||
-    'https://dementia-backend-tkpy.onrender.com';
+// ─── Backend Base URL ───────────────────────────────────────────────────────
+// Production (Vercel build): VITE_API_URL is undefined → uses RENDER_URL below
+// Local dev: set VITE_API_URL=http://localhost:5000 in HC-FRONTEND/.env
+// ────────────────────────────────────────────────────────────────────────────
+const RENDER_URL = 'https://dementia-backend-tkpy.onrender.com';
+
+const RAW_URL = import.meta.env.VITE_API_URL || RENDER_URL;
 
 // Strip any accidental trailing /api or / so the baseURL is always exactly <root>/api
 const BASE_URL = RAW_URL.replace(/\/api\/?$/, '').replace(/\/$/, '');
