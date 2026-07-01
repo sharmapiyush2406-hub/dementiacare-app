@@ -1,9 +1,11 @@
+
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
 const User = require('./models/User');
 
 dotenv.config({ path: path.join(__dirname, '.env') });
+console.log("MONGO_URI =", process.env.MONGO_URI);
 
 const connectDB = async () => {
     // Validate that MONGO_URI is defined
