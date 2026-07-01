@@ -2,6 +2,14 @@
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
+// ──────────────────────────────────────────────────────────────────────────────
+// CRITICAL FIX — Windows DNS Stub Resolver Bug
+// Node.js libuv cannot reach Windows's 127.0.0.1 DNS stub via raw UDP.
+// Override to Google Public DNS BEFORE any mongoose.connect() call.
+// ──────────────────────────────────────────────────────────────────────────────
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+
 // Gracefully skip seeding in production or Render environments
 if (process.env.NODE_ENV === 'production' || process.env.RENDER) {
   console.log('\n⚠️  Seeding is disabled in production/Render environments. Skipping script execution.\n');

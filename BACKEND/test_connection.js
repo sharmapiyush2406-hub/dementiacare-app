@@ -1,3 +1,6 @@
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']); // Fix: Windows loopback DNS stub not reachable from Node libuv
+
 const mongoose = require("mongoose");
 require("dotenv").config();
 
