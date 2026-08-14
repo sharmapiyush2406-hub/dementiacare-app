@@ -7,7 +7,6 @@ import axios from 'axios';
 const RENDER_URL = 'https://dementia-backend-tkpy.onrender.com';
 
 const RAW_URL = import.meta.env.VITE_API_URL || RENDER_URL;
-
 // Strip any accidental trailing /api or / so the baseURL is always exactly <root>/api
 const BASE_URL = RAW_URL.replace(/\/api\/?$/, '').replace(/\/$/, '');
 
