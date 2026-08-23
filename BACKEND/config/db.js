@@ -12,7 +12,9 @@ const dns = require('dns');
 // Fix: override the DNS servers list to point directly at Google Public DNS
 // BEFORE mongoose.connect() is ever called. This applies to the entire process.
 // ──────────────────────────────────────────────────────────────────────────────
-dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+if (process.platform === 'win32') {
+    dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+}
 
 const connectDB = async () => {
     try {
