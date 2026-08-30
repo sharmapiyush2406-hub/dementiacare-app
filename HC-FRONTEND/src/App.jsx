@@ -18,6 +18,7 @@ import Profile from "./patient/pages/Profile";
 import CaregiverProfile from "./patient/pages/CaregiverProfile";
 import Appointments from "./patient/pages/Appointments";
 import MemoryAssistant from "./patient/pages/MemoryAssistant";
+import Games from "./patient/pages/Games";
 
 // Caregiver Pages
 import Patients from "./caregiver/pages/Patients";
@@ -62,6 +63,7 @@ function App() {
         <Route path="/patient/appointments" element={<ProtectedRoute allowedRole="patient"><Appointments /></ProtectedRoute>} />
         <Route path="/patient/medication" element={<ProtectedRoute allowedRole="patient"><Medication /></ProtectedRoute>} />
         <Route path="/patient/reports" element={<ProtectedRoute allowedRole="patient"><PatientReports /></ProtectedRoute>} />
+        <Route path="/patient/games" element={<ProtectedRoute allowedRole="patient"><Games /></ProtectedRoute>} />
         <Route path="/patient/caregiver" element={<ProtectedRoute allowedRole="patient"><CaregiverProfile /></ProtectedRoute>} />
         <Route path="/patient/profile" element={<ProtectedRoute allowedRole="patient"><Profile /></ProtectedRoute>} />
         <Route path="/patient/memory-assistant" element={<ProtectedRoute allowedRole="patient"><MemoryAssistant /></ProtectedRoute>} />
