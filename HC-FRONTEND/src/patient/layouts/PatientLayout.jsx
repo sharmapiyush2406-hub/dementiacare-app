@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from "../../shared/components/Sidebar";
 import Navbar from "../../shared/components/Navbar";
 import "../../shared/components/Layout.css";
-import { HomeIcon, ClipboardIcon, PillIcon, FileTextIcon, UserIcon, CalendarIcon } from "../../shared/components/Icons";
+import { HomeIcon, ClipboardIcon, PillIcon, FileTextIcon, UserIcon, CalendarIcon, GamepadIcon } from "../../shared/components/Icons";
 
 function PatientLayout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +15,10 @@ function PatientLayout({ children }) {
     { name: "Memory Assistant", path: "/patient/memory-assistant", icon: "🧠" },
     { name: "Caregiver", path: "/patient/caregiver", icon: "👩‍⚕️" },
     { name: "Reports", path: "/patient/reports", icon: <FileTextIcon /> },
+    { name: "Cognitive Games", path: "/patient/games", icon: <GamepadIcon /> },
     { name: "Profile", path: "/patient/profile", icon: <UserIcon /> },
   ];
+
 
   return (
     <div className="dashboard-wrapper">
