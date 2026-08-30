@@ -55,6 +55,25 @@ const patientSchema = new mongoose.Schema({
         language: { type: String, default: 'English' },
         timezone: { type: String, default: 'UTC-5 (Eastern)' },
     },
+
+    // ── Location & Geofencing ─────────────────────────────────
+    location: {
+        latitude: { type: Number },
+        longitude: { type: Number },
+        accuracy: { type: Number },
+        timestamp: { type: Date }
+    },
+    safeZone: {
+        centerLatitude: { type: Number },
+        centerLongitude: { type: Number },
+        radius: { type: Number, default: 1000 }, // default 1km in meters
+        enabled: { type: Boolean, default: false }
+    },
+    geofenceStatus: {
+        type: String,
+        enum: ['SAFE', 'BREACHED', 'UNKNOWN'],
+        default: 'UNKNOWN'
+    },
 }, { timestamps: true });
 
 const { triggerReindex } = require('../utils/autoIndex');

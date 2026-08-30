@@ -6,6 +6,7 @@ import StatsCard from "../../shared/components/StatsCard";
 import { CalendarIcon, FileTextIcon, ActivityIcon, HeartIcon } from "../../shared/components/Icons";
 import HealthOverviewChart from "../components/HealthOverviewChart";
 import EmergencyButton from "../components/EmergencyButton";
+import LocationTracker from "../components/LocationTracker";
 
 const SparklesIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -21,6 +22,7 @@ function PatientDashboard() {
   return (
     <PatientLayout>
       <h2>Patient Dashboard</h2>
+      <LocationTracker />
       <EmergencyButton />
 
       <div className="stats-grid">
