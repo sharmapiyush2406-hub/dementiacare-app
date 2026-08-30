@@ -24,6 +24,7 @@ import Patients from "./caregiver/pages/Patients";
 import CaregiverTasks from "./caregiver/pages/Tasks";
 import CaregiverReports from "./caregiver/pages/Reports";
 import Alerts from "./caregiver/pages/Alerts";
+import LiveLocationMap from "./caregiver/pages/LiveLocationMap";
 
 // Doctor Pages
 import DoctorDashboard from "./doctor/pages/DoctorDashboard";
@@ -72,6 +73,7 @@ function App() {
         <Route path="/caregiver/tasks" element={<ProtectedRoute allowedRole="caregiver"><CaregiverTasks /></ProtectedRoute>} />
         <Route path="/caregiver/reports" element={<ProtectedRoute allowedRole="caregiver"><CaregiverReports /></ProtectedRoute>} />
         <Route path="/caregiver/alerts" element={<ProtectedRoute allowedRole="caregiver"><Alerts /></ProtectedRoute>} />
+        <Route path="/caregiver/tracking" element={<ProtectedRoute allowedRole="caregiver"><LiveLocationMap /></ProtectedRoute>} />
 
         {/* Doctor Routes */}
         <Route path="/doctor" element={<ProtectedRoute allowedRole="doctor"><DoctorDashboard /></ProtectedRoute>} />

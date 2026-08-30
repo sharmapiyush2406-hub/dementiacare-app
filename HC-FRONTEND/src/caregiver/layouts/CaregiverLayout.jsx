@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from "../../shared/components/Sidebar";
 import Navbar from "../../shared/components/Navbar";
 import "../../shared/components/Layout.css";
-import { HomeIcon, UsersIcon, ClipboardIcon, FileTextIcon, AlertIcon } from "../../shared/components/Icons";
+import { HomeIcon, UsersIcon, ClipboardIcon, FileTextIcon, AlertIcon, ActivityIcon } from "../../shared/components/Icons";
 
 function CaregiverLayout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +10,7 @@ function CaregiverLayout({ children }) {
   const menuItems = [
     { name: "Dashboard", path: "/caregiver/dashboard", icon: <HomeIcon /> },
     { name: "Patients", path: "/caregiver/patients", icon: <UsersIcon /> },
+    { name: "Live Tracking", path: "/caregiver/tracking", icon: <ActivityIcon /> },
     { name: "Assign Tasks", path: "/caregiver/tasks", icon: <ClipboardIcon /> },
     { name: "Reports", path: "/caregiver/reports", icon: <FileTextIcon /> },
     { name: "Alerts", path: "/caregiver/alerts", icon: <AlertIcon /> },
